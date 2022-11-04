@@ -1,0 +1,769 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+/*********************maingame*********************/
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-image: linear-gradient(
+    180deg,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+  background-repeat: no-repeat;
+  height: 100vh;
+  padding: 5% 25%;
+  color: hsl(229, 25%, 31%);
+}
+.header {
+  border: 2px solid hsl(217, 16%, 45%);
+  border-radius: 15px;
+  padding: 5%;
+  padding-bottom: 4%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.img5 {
+  display: none;
+}
+.score {
+  background-color: white;
+  border-radius: 10px;
+  margin: -2% -2% -1% -2%;
+  width: 22%;
+  text-align: center;
+}
+.score p {
+  color: hsl(229, 64%, 46%);
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-top: 10%;
+  margin-bottom: -5%;
+}
+#score {
+  font-weight: 700;
+  font-size: 80px;
+}
+.triangle,
+.pentagon {
+  margin-top: 20%;
+  position: absolute;
+  margin-top: 12%;
+  left: 39.5%;
+}
+#paper {
+  position: absolute;
+  border: none;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    180deg,
+    hsl(230, 89%, 65%),
+    hsl(230, 89%, 62%)
+  );
+  height: 180px;
+  width: 180px;
+  box-shadow: 0 6px 2px rgb(54, 54, 255);  
+  top: 34%;
+  left: 33%;
+  animation-duration: 3s;
+}
+#scissor {
+  position: absolute;
+  border: none;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    180deg,
+    hsl(40, 84%, 53%),
+    hsl(39, 89%, 49%)
+  );
+  height: 180px;
+  width: 180px;
+  box-shadow: 0 6px 2px hsl(39, 98%, 36%);
+  top: 34%;
+  left: 54.5%;
+  animation-duration: 3s;
+}
+#rock {
+  position: absolute;
+  border: none;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    180deg,
+    hsl(349, 70%, 56%),
+    hsl(349, 71%, 52%)
+  );
+  height: 180px;
+  width: 180px;
+  box-shadow: 0 6px 2px hsl(349, 85%, 32%);
+  top: 58%;
+  left: 44%;
+  animation-duration: 3s;
+}
+@keyframes mymove {
+  0% {
+  }
+  100% {
+    height: 320px;
+    width: 320px;
+    top: 46%;
+    left: 25.5%;
+  }
+}
+#paper:hover,
+#scissor:hover,
+#rock:hover,
+#spock:hover,
+#lizard:hover {
+  transform: scale(1.1);
+}
+.circleA,
+.circleB,
+.circleC,
+.circleD,
+.circleE {
+  background-color: white;
+  border-radius: 50%;
+  height: 140px;
+  width: 140px;
+  margin: auto;
+  padding: 20%;
+  box-shadow: inset 0 6px 2px rgb(221, 219, 219);
+  animation-duration: 3s;
+}
+@keyframes circlemove {
+  0% {
+  }
+  100% {
+    height: 250px;
+    width: 250px;
+  }
+}
+.imgA,
+.imgB,
+.imgC,
+.imgD,
+.imgE {
+  width: 70px;
+  animation-duration: 3s;
+}
+@keyframes imgmove {
+  0% {
+  }
+  100% {
+    width: 110px;
+  }
+}
+.count-game {
+  bottom: 3%;
+  right: 1%;
+  position: absolute;
+}
+#rule3,
+#rule5 {
+  background-color: transparent;
+  color: white;
+  border: 2px solid hsl(217, 16%, 45%);
+  padding: 5px 35px;
+  border-radius: 10px;
+  letter-spacing: 2px;
+}
+#ready-game {
+  display: block;
+}
+/***************************rule**********************/
+#rule-card,
+#rule5,
+.img-rule5 {
+  display: none;
+}
+.curtain {
+  position: absolute;
+  background-color: black;
+  opacity: 0.5;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.card {
+  position: absolute;
+  margin-top: -2%;
+  left: 36%;
+  width: 28%;
+  border-radius: 10px;
+}
+.card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5% 8% 0 5%;
+  background-color: transparent;
+  border: none;
+}
+.card-header button {
+  border: none;
+  background-color: white;
+}
+.card-body {
+  padding: 10%;
+}
+.img-rule3,
+.img-rule5 {
+  width: 100%;
+}
+/**************************in-game**************************/
+#in-game {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  color: white;
+  letter-spacing: 2px;
+  width: 50%;
+  margin-top: 5%;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+}
+@keyframes moveresult {
+  0% {
+  }
+  100% {
+    width: 70%;
+    margin-left: -10%;
+  }
+}
+.in-game-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+.in-game-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 10%;
+  width: 95%;
+  margin-left: 1%;
+}
+#youChoosePaper {
+  display: none;
+  border: none;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    180deg,
+    hsl(230, 89%, 65%),
+    hsl(230, 89%, 62%)
+  );
+  height: 320px;
+  width: 320px;
+  box-shadow: 0 10px 2px rgb(54, 54, 255);
+}
+#youChooseScissor {
+  display: none;
+  border: none;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    180deg,
+    hsl(40, 84%, 53%),
+    hsl(39, 89%, 49%)
+  );
+  height: 320px;
+  width: 320px;
+  box-shadow: 0 6px 2px hsl(39, 98%, 36%);
+}
+#youChooseRock {
+  display: none;
+  border: none;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    180deg,
+    hsl(349, 70%, 56%),
+    hsl(349, 71%, 52%)
+  );
+  height: 320px;
+  width: 320px;
+  box-shadow: 0 6px 2px hsl(349, 85%, 32%);
+}
+#comChooseScissor {
+  display: none;
+  border: none;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    180deg,
+    hsl(40, 84%, 53%),
+    hsl(39, 89%, 49%)
+  );
+  height: 320px;
+  width: 320px;
+  box-shadow: 0 6px 2px hsl(39, 98%, 36%);
+  animation: commove 2s forwards;
+}
+#comChoosePaper {
+  display: none;
+  border: none;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    180deg,
+    hsl(230, 89%, 65%),
+    hsl(230, 89%, 62%)
+  );
+  height: 320px;
+  width: 320px;
+  box-shadow: 0 10px 2px rgb(54, 54, 255);
+  animation: commove 2s forwards;
+}
+#comChooseRock {
+  display: none;
+  border: none;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    180deg,
+    hsl(349, 70%, 56%),
+    hsl(349, 71%, 52%)
+  );
+  height: 320px;
+  width: 320px;
+  box-shadow: 0 6px 2px hsl(349, 85%, 32%);
+  animation: commove 2s forwards;
+}
+@keyframes commove {
+  from {
+    transform: rotateX(0);
+  }
+  to {
+    transform: rotateX(1800deg);
+  }
+}
+.circle2 {
+  background-color: white;
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  margin: auto;
+  padding: 20%;
+  box-shadow: inset 0 10px 2px rgb(221, 219, 219);
+}
+.imgChoose {
+  width: 110px;
+}
+.circleempty {
+  display: block;
+  position: absolute;
+  background-color: hsl(237, 49%, 15%);
+  opacity: 0.75;
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  margin-top: 5%;
+  left: 55%;
+  z-index: -1;
+}
+#vs {
+  display: none;
+  text-align: center;
+  margin-top: 10%;
+  animation-timing-function: ease-in-out;
+}
+#vs h1 {
+  font-weight: 700;
+  font-size: 50px;
+}
+#vs button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 60px;
+  letter-spacing: 2px;
+}
+#vs button:hover {
+  color: hsl(349, 70%, 56%);
+}
+#playbonus {
+  display: none;
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  color: white;
+  font-size: 30px;
+}
+#anime {
+  position: absolute;
+}
+.animationyouwin {
+  animation: win 5s;
+  position: absolute;
+  animation-iteration-count: infinite;
+  background: linear-gradient(hsl(220, 40%, 50%) 0 0) padding-box,
+    radial-gradient(hsl(220, 40%, 30%), hsl(220, 40%, 40%)) border-box;
+  border: 5px solid transparent;
+  border-radius: 100%;
+  display: inline-block;
+  margin: 75px 0;
+  z-index: -1;
+}
+
+@keyframes win {
+  0% {
+    width: 390px;
+    height: 390px;
+    border-width: 2em;
+    opacity: 1;
+    margin-top: -2%;
+    margin-left: -3%;
+  }
+  50% {
+    width: 500px;
+    height: 500px;
+    border-width: 3em;
+    opacity: 0.5;
+    margin-top: -7.5%;
+    margin-left: -8.5%;
+  }
+  100% {
+    width: 580px;
+    height: 580px;
+    border-width: 4em;
+    opacity: 0;
+    margin-top: -12%;
+    margin-left: -12%;
+  }
+}
+
+.animationyoulose {
+  animation: lose 5s;
+  position: absolute;
+  animation-iteration-count: infinite;
+  background: linear-gradient(hsl(220, 40%, 50%) 0 0) padding-box,
+    radial-gradient(hsl(220, 40%, 30%), hsl(220, 40%, 40%)) border-box;
+  border: 5px solid transparent;
+  border-radius: 100%;
+  display: inline-block;
+  margin: 75px 0;
+  z-index: -1;
+}
+
+@keyframes lose {
+  0% {
+    width: 390px;
+    height: 390px;
+    border-width: 2em;
+    opacity: 1;
+    margin-top: -3%;
+    right: 1%;
+  }
+  50% {
+    width: 500px;
+    height: 500px;
+    border-width: 3em;
+    opacity: 0.5;
+    margin-top: -8%;
+    right: -4.5%;
+  }
+  100% {
+    width: 580px;
+    height: 580px;
+    border-width: 4em;
+    opacity: 0;
+    margin-top: -12%;
+    right: -8%;
+  }
+}
+
+/********************************bonus***********************************/
+.pentagon,
+#spock,
+#lizard {
+  display: none;
+}
+#spock {
+  position: absolute;
+  border: none;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    180deg,
+    hsl(189, 58%, 57%),
+    hsl(189, 59%, 53%)
+  );
+  height: 180px;
+  width: 180px;
+  box-shadow: 0 6px 2px hsl(189, 59%, 40%);
+  top: 46%;
+  left: 32%;
+  animation-duration: 3s;
+}
+#lizard {
+  position: absolute;
+  border: none;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    180deg,
+    hsl(261, 72%, 63%),
+    hsl(261, 73%, 60%)
+  );
+  height: 180px;
+  width: 180px;
+  box-shadow: 0 6px 2px hsl(261, 73%, 50%);
+  top: 68%;
+  left: 37%;
+  animation-duration: 3s;
+}
+#youChooseSpock {
+  display: none;
+  border: none;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    180deg,
+    hsl(189, 58%, 57%),
+    hsl(189, 59%, 53%)
+  );
+  height: 320px;
+  width: 320px;
+  box-shadow: 0 6px 2px hsl(189, 59%, 40%);
+}
+#youChooseLizard {
+  display: none;
+  border: none;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    180deg,
+    hsl(261, 72%, 63%),
+    hsl(261, 73%, 60%)
+  );
+  height: 320px;
+  width: 320px;
+  box-shadow: 0 6px 2px hsl(261, 73%, 50%);
+}
+#comChooseSpock {
+  display: none;
+  border: none;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    180deg,
+    hsl(189, 58%, 57%),
+    hsl(189, 59%, 53%)
+  );
+  height: 320px;
+  width: 320px;
+  box-shadow: 0 6px 2px hsl(189, 59%, 40%);
+  animation: commove 2s forwards;
+}
+#comChooseLizard {
+  display: none;
+  border: none;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    180deg,
+    hsl(261, 72%, 63%),
+    hsl(261, 73%, 60%)
+  );
+  height: 320px;
+  width: 320px;
+  box-shadow: 0 6px 2px hsl(261, 73%, 50%);
+  animation: commove 2s forwards;
+}
+
+@media (max-width:550px){
+  body{
+    padding: 5%;    
+  }
+  .img5 ,.img3{
+    height: 60px;
+  }
+ .score  p{
+    font-size: 12px;
+  }
+  #score{
+    font-size: 30px;    
+  }
+  #triangle,#pentagon{
+    left: 20%;
+    width: 60%;
+    margin-top: 50%;
+  }  
+  #paper{
+    width: 130px;
+    height: 130px;
+    top: 30%;
+    left: 8%;   
+  }
+  #scissor{
+    width: 130px;
+    height: 130px;
+    top: 30%;
+    left: 58%;    
+  }
+  #rock{
+    width: 130px;
+    height: 130px;
+    top: 50%;
+    left: 33%;    
+  }
+  #spock{
+    width: 130px;
+    height: 130px;
+    top: 37%;
+    left: 0;
+  }
+  #lizard{
+    width: 130px;
+    height: 130px;
+    top: 57%;
+    left: 11%;
+  }
+  .circleA,.circleB,.circleC,.circleD,.circleE{
+    width: 100px;
+    height: 100px;
+  }
+  .imgA,.imgB,.imgC,.imgD,.imgE{
+    width: 50px;
+  }
+  .count-game{
+    right: 25%;
+    text-align: center;
+  }
+  .card{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 20%;
+  }
+  .card-header h1{
+    margin-left: 42%;
+    margin-bottom: 20%;
+  }
+  #close{
+    position: absolute;    
+    bottom: 10%;
+    left: 48%;
+    width: 30px;
+  }
+  @keyframes mymove {
+    0% {
+    }
+    100% {
+      height: 135px;
+      width: 135px;
+      top: 25%;
+      left: 8%;
+    }
+  }
+  @keyframes circlemove {
+    0% {
+    }
+    100% {
+      height: 105px;
+      width: 105px;
+    }
+  }
+  @keyframes imgmove {
+    0% {
+    }
+    100% {
+      width: 55px;
+    }
+  }
+  #in-game{  
+    flex-direction: column-reverse;
+    width: 90%;
+    margin-top: 20%;
+  }
+  .in-game-head{
+    width: 90%;
+    margin-left: 10%;
+  }
+  .in-game-head h3{
+    font-size: 14px;  
+    margin-top: 15%;    
+  }
+  .in-game-body ,#playbonus,#again{
+    width: 100%;
+  }
+  #youChoosePaper,#youChooseScissor,#youChooseRock,#youChooseSpock,#youChooseLizard,#comChoosePaper,#comChooseScissor,#comChooseRock,#comChooseSpock,#comChooseLizard{  
+    width: 135px;
+    height: 135px;
+  }
+  .circle2{
+    width: 105px;
+    height: 105px;
+  }
+  .imgChoose{
+    width: 52px;
+  }
+  .circleempty{
+    width: 100px;
+    height: 100px;
+    left: 65%;
+  }
+  @keyframes moveresult {
+    0% {
+    }
+    100% {
+      width: 90%;
+      margin-left: 0;
+    }
+  }
+  #vs{
+    position: absolute;
+    width: 100%; 
+   top: 150%;   
+  }
+  @keyframes win {
+    0% {
+      width: 210px;
+      height: 210px;
+      border-width: 1em;
+      opacity: 1;
+      margin-top: -10%;
+      margin-left: -10%;
+    }
+    50% {
+      width: 250px;
+      height: 250px;
+      border-width: 2em;
+      opacity: 0.5;
+      margin-top: -17%;
+      margin-left: -17%;
+    }
+    100% {
+      width: 280px;
+      height: 280px;
+      border-width: 2em;
+      opacity: 0;
+      margin-top: -20%;
+      margin-left: -20%;
+    }
+  }
+  @keyframes lose {
+    0% {
+      width: 210px;
+      height: 210px;
+      border-width: 1em;
+      opacity: 1;
+      margin-top: -10%;
+      right: -11%;
+    }
+    50% {
+      width: 250px;
+      height: 250px;
+      border-width: 2em;
+      opacity: 0.5;
+      margin-top: -16%;
+      right: -18%;
+    }
+    100% {
+      width: 280px;
+      height: 280px;
+      border-width: 2em;
+      opacity: 0;
+      margin-top: -20%;
+      right: -20%;
+    }
+  }
+}
